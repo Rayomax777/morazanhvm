@@ -249,7 +249,6 @@ footer p {
         margin-bottom: 20px;
         box-sizing: border-box; /* Para asegurarnos de que el padding no afecte el ancho */
     }
-
     .question-box p {
         margin: 0;
         font-size: 1.3rem;
