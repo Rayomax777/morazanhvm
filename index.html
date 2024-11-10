@@ -19,12 +19,18 @@
 
     <!-- Main content -->
     <div id="game-container">
-        <h1>Quiz sobre Francisco Morazán</h1>
-        <p>Responde las preguntas sobre la vida de Morazán y gana premios según tu puntaje final.</p>
+        <div class="title-box">
+            <h1>Quiz sobre Francisco Morazán</h1>
+        </div>
+        <div class="subtitle-box">
+            <p>Responde las preguntas sobre la vida de Morazán y gana premios según tu puntaje final.</p>
+        </div>
 
         <div id="quiz-container">
-            <div id="question-container">
+            <div class="question-box">
                 <p id="question"></p>
+            </div>
+            <div class="answers-box">
                 <button onclick="selectAnswer(0)" id="option0" class="option-btn">Opción 1</button>
                 <button onclick="selectAnswer(1)" id="option1" class="option-btn">Opción 2</button>
                 <button onclick="selectAnswer(2)" id="option2" class="option-btn">Opción 3</button>
