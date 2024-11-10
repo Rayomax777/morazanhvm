@@ -11,32 +11,81 @@ body {
     min-height: 100vh;
 }
 
-/* Navbar */
+/* Navbar básico */
 #navbar {
-    background-color: #1f3a5f;
-    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
     position: fixed;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 100;
 }
 
 .navbar-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#quiz-title {
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 10px;
+}
+
+.navbar-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar-item {
     color: white;
-    font-size: 1.2rem;
+    margin-right: 20px;
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 1rem;
+    padding: 5px 10px;
 }
 
 .navbar-item:hover {
-    color: #ffebcd;
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Responsive: Para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+    #navbar {
+        padding: 15px;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #quiz-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .navbar-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-item {
+        padding: 8px 15px;
+        width: 100%; /* Asegura que los enlaces ocupen el ancho completo */
+        text-align: left;
+    }
+
+    .navbar-item:hover {
+        background-color: #575757;
+    }
 }
 
 /* Contenedor principal */
