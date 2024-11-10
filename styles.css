@@ -4,6 +4,10 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    justify-content: center; /* Centra el contenido en el eje horizontal */
+    align-items: center;     /* Centra el contenido en el eje vertical */
+    min-height: 100vh;       /* Asegura que el body ocupe toda la altura de la pantalla */
 }
 
 /* Navbar */
@@ -41,13 +45,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 80px; /* Adjust for navbar */
+    margin-top: 80px; /* Ajustar para la navbar */
     padding: 20px;
     background-color: #fff;
-    width: 80%;
-    max-width: 1000px;
+    width: 90%; /* Ajuste de ancho */
+    max-width: 1000px; /* Tamaño máximo en pantallas grandes */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    margin-bottom: 80px; /* Espacio para el footer */
 }
 
 h1 {
@@ -122,5 +127,44 @@ h1 {
     }
     to {
         opacity: 1;
+    }
+}
+
+/* Media Queries (responsive design) */
+
+/* For screens 600px or less (tablets and mobile devices) */
+@media (max-width: 600px) {
+    #game-container {
+        width: 95%;  /* Slightly reduce width for smaller screens */
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em; /* Reduce font size on small screens */
+    }
+
+    .option-btn {
+        width: 80%;  /* Make buttons bigger for easy tapping */
+        font-size: 1.1em;
+    }
+
+    #score {
+        font-size: 1.2em;
+    }
+}
+
+/* For larger screens (desktop) */
+@media (min-width: 1000px) {
+    #game-container {
+        width: 80%; /* Make the game container narrower for wide screens */
+    }
+
+    h1 {
+        font-size: 2.5em; /* Increase font size on larger screens */
+    }
+
+    .option-btn {
+        width: 50%; /* Smaller buttons for larger screens */
+        font-size: 1.3em;
     }
 }
