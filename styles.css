@@ -47,9 +47,10 @@ body {
     background: #ffffff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 1200px; /* Ajusta el tamaño máximo para pantallas grandes */
     flex-grow: 1; /* Permite que el contenedor crezca */
+    min-height: 80vh; /* Asegura que el contenedor ocupe al menos el 80% de la altura */
 }
 
 /* Caja del Título */
@@ -156,18 +157,68 @@ footer p {
     margin: 0;
 }
 
-/* Animaciones */
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
+/* Media Queries (responsive design) */
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    #game-container {
+        width: 90%;
+        padding: 10px;
+        min-height: 75vh; /* Ajusta la altura mínima para móviles */
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .title-box h1 {
+        font-size: 1.4rem;
+    }
+
+    .subtitle-box p {
+        font-size: 1rem;
+    }
+
+    .option-btn {
+        font-size: 1rem;
+        width: 100%;
+        padding: 10px;
     }
 }
 
-.animate {
-    animation: slideIn 0.5s ease-out;
+/* Pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #game-container {
+        width: 85%;
+    }
+
+    .title-box h1 {
+        font-size: 1.6rem;
+    }
+
+    .subtitle-box p {
+        font-size: 1.1rem;
+    }
+
+    .option-btn {
+        font-size: 1.1rem;
+        width: 90%;
+    }
+}
+
+/* Pantallas grandes (PCs) */
+@media (min-width: 1025px) {
+    #game-container {
+        width: 70%;
+        padding: 20px;
+    }
+
+    .title-box h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle-box p {
+        font-size: 1.3rem;
+    }
+
+    .option-btn {
+        font-size: 1.2rem;
+        width: 75%;
+    }
 }
