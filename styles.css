@@ -23,9 +23,22 @@ body {
 
 .navbar-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
+}
+
+#quiz-title {
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 10px;
+}
+
+.navbar-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar-item {
@@ -208,6 +221,7 @@ footer p {
         font-size: 1.1rem;
     }
 }
+
 @media (min-width: 1025px) {
     #game-container {
         width: 100%;
