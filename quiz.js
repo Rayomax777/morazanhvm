@@ -64,57 +64,42 @@ const questions = [
         correct: 0
     }
 ];
-
-// Función para cargar la pregunta actual
-function loadQuestion() {
-    let questionData = questions[currentQuestion];
-    document.getElementById('question').innerText = questionData.question;
+function selectAnswer(selectedIndex) {
+    const currentQuestion = questions[currentQuestionIndex];
+    const resultBox = document.getElementById("result-box");
     
-    // Mostrar las opciones de respuesta
-    let buttons = document.querySelectorAll('.option-btn');
-    buttons.forEach((button, index) => {
-        button.innerText = questionData.options[index];
-    });
-    
-    // Actualizar puntaje
-    document.getElementById('score').innerText = `Puntaje: ${score}`;
-    document.getElementById('result-box').style.display = 'none';
-}
-
-// Función para verificar la respuesta seleccionada
-function selectAnswer(answerIndex) {
-    let questionData = questions[currentQuestion];
-    let resultBox = document.getElementById('result-box');
-    
-    // Si la respuesta es correcta
-    if (answerIndex === questionData.correct) {
-        score += 10;
-        resultBox.innerText = "¡Correcto!";
+    // Verificar si la respuesta es correcta
+    if (currentQuestion.options[selectedIndex] === currentQuestion.answer) {
+        score++;
+        resultBox.textContent = "¡Correcto!";
         resultBox.className = "correct";
     } else {
-        resultBox.innerText = "Incorrecto";
+        resultBox.textContent = "Incorrecto!";
         resultBox.className = "incorrect";
     }
-    
-    // Mostrar el resultado
-    resultBox.style.display = 'block';
-    
-    // Avanzar a la siguiente pregunta
-    currentQuestion++;
-    
-    // Si quedan preguntas
-    if (currentQuestion < questions.length) {
-        setTimeout(() => {
-            loadQuestion();
-        }, 1000); // Espera 1 segundo antes de cargar la siguiente pregunta
-    } else {
-        setTimeout(() => {
-            alert(`Juego terminado. Tu puntaje final es: ${score}`);
-        }, 1000);
-    }
+
+    // Mostrar el puntaje
+    document.getElementById("score").textContent = `Puntaje: ${score}`;
+
+    // Ocultar la caja de resultados después de 1.5 segundos
+    setTimeout(() => {
+        resultBox.style.display = "none";
+        currentQuestionIndex++;
+
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+        } else {
+            resultBox.textContent = "¡Has terminado el quiz!";
+            resultBox.style.display = "block";
+        }
+    }, 1500);
 }
 
-// Iniciar el juego
-window.onload = () => {
-    loadQuestion();
-};
+// Inicializar el juego
+function startGame() {
+    shuffleQuestions(); // Mezcla las preguntas
+    showQuestion();
+}
+
+// Llamar a startGame cuando la página cargue
+window.onload = startGame;
