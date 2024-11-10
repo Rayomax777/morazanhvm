@@ -176,22 +176,6 @@ body {
     background-color: #f8d7da;
 }
 
-/* Footer */
-#footer {
-    background-color: #1f3a5f;
-    color: white;
-    width: 100%;
-    padding: 1rem 0;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    z-index: 1000;
-}
-
-footer p {
-    margin: 0;
-}
-
 /* Media Queries (responsive design) */
 
 /* Pantallas pequeñas (móviles) */
