@@ -64,6 +64,13 @@ const questions = [
         correct: 0
     }
 ];
+// Función para mezclar el arreglo de preguntas
+function shuffleQuestions() {
+    for (let i = questions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [questions[i], questions[j]] = [questions[j], questions[i]]; // Intercambia las posiciones
+    }
+}
 
 // Variables globales
 let currentQuestionIndex = 0;
