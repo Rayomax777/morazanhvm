@@ -46,6 +46,7 @@ body {
     font-size: 1.2rem;
     text-decoration: none;
     transition: color 0.3s;
+    padding: 0 15px;
 }
 
 .navbar-item:hover {
