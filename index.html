@@ -1,62 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz: La Vida de Francisco Morazán</title>
+    <title>Morazán Quiz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navbar -->
-   <nav id="navbar">
-    <div class="navbar-container">
-        <!-- Título principal -->
-        <h1 id="quiz-title">Morazán Quiz</h1>
+    <nav id="navbar">
+        <div class="navbar-container">
+            <div id="quiz-title">Morazán Quiz</div>
+            <ul class="navbar-list">
+                <li><a href="#about" class="navbar-item">Acerca de</a></li>
+                <li><a href="#contact" class="navbar-item">Contacto</a></li>
+                <li><a href="#team" class="navbar-item">Team</a></li>
+                <li><a href="https://hnhimno.onrender.com" class="navbar-item">Himno Nacional</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <!-- Menú de navegación en listas -->
-        <ul class="navbar-list">
-            <li><a href="#about" class="navbar-item">Acerca de</a></li>
-            <li><a href="#contact" class="navbar-item">Contacto</a></li>
-            <li><a href="#team" class="navbar-item">Team</a></li>
-        </ul>
-
-        <!-- Segunda lista para los juegos -->
-        <ul class="navbar-list">
-            <li><a href="https://hnhimno.onrender.com" class="navbar-item">Himno Nacional</a></li>
-        </ul>
-    </div>
-</nav>
     <!-- Main content -->
     <div id="game-container">
         <div class="left-side">
+            <!-- Título y subtítulo -->
             <div class="title-box">
                 <h1>Quiz sobre Francisco Morazán</h1>
             </div>
             <div class="subtitle-box">
                 <p>Responde las preguntas sobre la vida de Morazán y gana premios según tu puntaje final.</p>
             </div>
+
+            <!-- Pregunta -->
             <div class="question-box">
-                <p id="question">Pregunta aquí...</p>
+                <p id="question">¿Dónde nació Francisco Morazán?</p>
             </div>
         </div>
 
         <div class="right-side">
+            <!-- Respuestas -->
             <div class="answers-box">
-                <button onclick="selectAnswer(0)" id="option0" class="option-btn">Opción 1</button>
-                <button onclick="selectAnswer(1)" id="option1" class="option-btn">Opción 2</button>
-                <button onclick="selectAnswer(2)" id="option2" class="option-btn">Opción 3</button>
-                <button onclick="selectAnswer(3)" id="option3" class="option-btn">Opción 4</button>
+                <button onclick="selectAnswer(0)" class="option-btn">Opción 1</button>
+                <button onclick="selectAnswer(1)" class="option-btn">Opción 2</button>
+                <button onclick="selectAnswer(2)" class="option-btn">Opción 3</button>
+                <button onclick="selectAnswer(3)" class="option-btn">Opción 4</button>
             </div>
-            <p id="score">Puntaje: 0</p>
-        </div>
 
-        <div id="result-box"></div>
+            <!-- Puntaje -->
+            <p id="score">Puntaje: 0</p>
+
+            <!-- Resultado -->
+            <div id="result-box" class="correct"></div>
+        </div>
     </div>
 
+    <!-- Footer -->
     <footer id="footer">
         <p>&copy; 2024 Juego Educativo. Todos los derechos reservados.</p>
     </footer>
 
     <script src="quiz.js"></script>
 </body>
+
 </html>
