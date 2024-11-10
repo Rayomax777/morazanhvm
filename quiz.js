@@ -11,120 +11,125 @@ const questions = [
         answer: "Presidente"
     },
     {
-        question: "¿Dónde murió Francisco Morazán?",
-        options: ["Tegucigalpa", "Guatemala", "San Salvador", "Managua"],
-        answer: "San Salvador"
-    },
-    {
-        question: "¿Cuál era el objetivo principal de Morazán?",
-        options: ["Unir a Centroamérica", "Obtener la independencia", "Defender el cristianismo", "Fundar una nueva república"],
-        answer: "Unir a Centroamérica"
-    },
-    {
-        question: "¿En qué país Francisco Morazán tuvo su exilio?",
-        options: ["México", "Guatemala", "Costa Rica", "Nicaragua"],
+        question: "¿En qué país fue exiliado Francisco Morazán?",
+        options: ["Costa Rica", "Nicaragua", "Guatemala", "El Salvador"],
         answer: "Costa Rica"
     },
     {
-        question: "¿Qué batalla decisiva ganó Morazán durante la guerra de la Confederación Centroamericana?",
-        options: ["Batalla de la Puerta de la Luna", "Batalla de La Trinidad", "Batalla de Ayutla", "Batalla de San Antonio"],
-        answer: "Batalla de La Trinidad"
+        question: "¿En qué año murió Francisco Morazán?",
+        options: ["1842", "1839", "1840", "1850"],
+        answer: "1842"
     },
     {
-        question: "¿Qué hizo Morazán para modernizar la República Federal?",
-        options: ["Creó un ejército centralizado", "Abogó por la independencia total de Centroamérica", "Fundó una nueva constitución", "Fomentó la educación y la libertad de prensa"],
-        answer: "Fomentó la educación y la libertad de prensa"
+        question: "¿Qué ejército derrotó a Morazán en la batalla de la Sabana?",
+        options: ["Ejército de El Salvador", "Ejército de Nicaragua", "Ejército de Guatemala", "Ejército de Honduras"],
+        answer: "Ejército de Honduras"
     },
     {
-        question: "¿Qué sucedió con Morazán después de su derrota?",
-        options: ["Fue ejecutado", "Fue desterrado de Centroamérica", "Se retiró a la vida privada", "Se exilió en Europa"],
-        answer: "Fue ejecutado"
+        question: "¿Qué ideología política defendió Morazán?",
+        options: ["Liberalismo", "Conservadurismo", "Monarquía", "Comunismo"],
+        answer: "Liberalismo"
     },
     {
-        question: "¿A qué edad murió Francisco Morazán?",
-        options: ["40 años", "45 años", "50 años", "35 años"],
-        answer: "39 años"
+        question: "¿Qué evento histórico provocó la disolución de la República Federal de Centroamérica?",
+        options: ["Las Guerras de Independencia", "La Revolución Francesa", "Las Batallas de Morazán", "La Guerra de Secesión"],
+        answer: "Las Batallas de Morazán"
     },
     {
-        question: "¿En qué año se firmó la primera constitución de la República Federal de Centroamérica?",
-        options: ["1824", "1830", "1821", "1825"],
-        answer: "1824"
+        question: "¿Qué le ocurrió a Morazán después de su muerte?",
+        options: ["Fue olvidado", "Su legado fue reconocido en Honduras", "Fue reconocido como héroe en toda América Central", "Fue enterrado en Costa Rica"],
+        answer: "Fue enterrado en Costa Rica"
     },
     {
-        question: "¿Cómo se llama el tratado firmado en 1830 que buscaba la paz entre los estados de Centroamérica?",
-        options: ["Tratado de Paz de 1830", "Tratado de la Concordia", "Tratado de la Independencia", "Tratado de la Federación"],
-        answer: "Tratado de la Concordia"
+        question: "¿Cuál fue el objetivo principal de Morazán como líder político?",
+        options: ["Promover la independencia de los países centroamericanos", "Mantener la unidad de Centroamérica", "Consolidar un gobierno monárquico", "Defender el sistema colonial"],
+        answer: "Mantener la unidad de Centroamérica"
     },
     {
-        question: "¿Cuál fue el legado de Francisco Morazán para Centroamérica?",
-        options: ["La consolidación de la independencia de los países centroamericanos", "La unificación de Centroamérica bajo un solo gobierno", "La creación de una unión económica entre los países", "La creación de una confederación con Europa"],
-        answer: "La unificación de Centroamérica bajo un solo gobierno"
+        question: "¿En qué batalla murió Francisco Morazán?",
+        options: ["Batalla de la Sabana", "Batalla de Ayacucho", "Batalla de Puebla", "Batalla de San Salvador"],
+        answer: "Batalla de la Sabana"
+    },
+    {
+        question: "¿Quién fue el principal rival político de Morazán durante su gobierno?",
+        options: ["José Francisco Barrundia", "José Cecilio del Valle", "Rafael Carrera", "Antonio José de Irisarri"],
+        answer: "Rafael Carrera"
+    },
+    {
+        question: "¿Qué instrumento utilizó Morazán para intentar lograr la unidad centroamericana?",
+        options: ["La diplomacia", "La guerra", "La monarquía", "La negociación con los conservadores"],
+        answer: "La guerra"
+    },
+    {
+        question: "¿Qué lugar ocupa Morazán en la historia de Honduras?",
+        options: ["Es considerado el máximo héroe nacional", "Es un presidente más", "Es un político olvidado", "Es una figura polémica"],
+        answer: "Es considerado el máximo héroe nacional"
+    },
+    {
+        question: "¿Quién ayudó a Morazán en su lucha por la unidad centroamericana?",
+        options: ["José Francisco Barrundia", "Juan José Flores", "Francisco de Paula Santander", "Andrés Bello"],
+        answer: "José Francisco Barrundia"
     }
 ];
 
-// Función para mezclar el arreglo de preguntas
-function shuffleQuestions() {
-    for (let i = questions.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [questions[i], questions[j]] = [questions[j], questions[i]]; // Intercambia las posiciones
-    }
-}
-
-// Variables globales
 let currentQuestionIndex = 0;
 let score = 0;
 
-// Mostrar una pregunta
+// Función para mostrar la pregunta actual
 function showQuestion() {
-    const questionElement = document.getElementById("question");
-    const optionButtons = document.querySelectorAll(".option-btn");
+    const questionObj = questions[currentQuestionIndex];
+    const questionText = document.getElementById("question");
+    const options = document.querySelectorAll(".option-btn");
 
-    const currentQuestion = questions[currentQuestionIndex];
-    questionElement.textContent = currentQuestion.question;
+    questionText.textContent = questionObj.question;
 
-    currentQuestion.options.forEach((option, index) => {
-        optionButtons[index].textContent = option;
+    // Asignar las opciones aleatoriamente
+    const shuffledOptions = [...questionObj.options];
+    shuffledOptions.sort(() => Math.random() - 0.5);
+
+    options.forEach((btn, index) => {
+        btn.textContent = shuffledOptions[index];
+        btn.disabled = false;  // Habilitar los botones de respuesta
     });
+
+    // Mostrar la caja de resultado (si está visible, la ocultamos al cambiar la pregunta)
+    const resultBox = document.getElementById("result-box");
+    resultBox.style.display = "none";
 }
 
-// Manejar la selección de la respuesta
+// Función para manejar la selección de la respuesta
 function selectAnswer(selectedIndex) {
-    const currentQuestion = questions[currentQuestionIndex];
+    const questionObj = questions[currentQuestionIndex];
+    const selectedOption = document.getElementById(`option${selectedIndex}`).textContent;
+
     const resultBox = document.getElementById("result-box");
-    
-    // Verificar si la respuesta es correcta
-    if (currentQuestion.options[selectedIndex] === currentQuestion.answer) {
-        score++; // Sumar puntos por respuesta correcta
+    const scoreDisplay = document.getElementById("score");
+
+    // Comprobar si la respuesta es correcta
+    if (selectedOption === questionObj.answer) {
+        score += 10;
         resultBox.textContent = "¡Correcto!";
         resultBox.className = "correct";
     } else {
-        score--; // Restar puntos por respuesta incorrecta
-        resultBox.textContent = "Incorrecto!";
+        score -= 5;
+        resultBox.textContent = "Incorrecto";
         resultBox.className = "incorrect";
     }
 
-    // Mostrar el puntaje
-    document.getElementById("score").textContent = `Puntaje: ${score}`;
+    // Mostrar el puntaje actualizado
+    scoreDisplay.textContent = `Puntaje: ${score}`;
+    resultBox.style.display = "block";
 
-    // Ocultar la caja de resultados después de 1.5 segundos
+    // Deshabilitar los botones después de responder
+    const buttons = document.querySelectorAll(".option-btn");
+    buttons.forEach(button => button.disabled = true);
+
+    // Esperar 2 segundos antes de mostrar la siguiente pregunta
     setTimeout(() => {
-        resultBox.style.display = "none";
-        currentQuestionIndex++;
-
-        if (currentQuestionIndex < questions.length) {
-            showQuestion();
-        } else {
-            resultBox.textContent = "¡Has terminado el quiz!";
-            resultBox.style.display = "block";
-        }
-    }, 1500);
+        currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+        showQuestion();
+    }, 2000);
 }
 
-// Inicializar el juego
-function startGame() {
-    shuffleQuestions(); // Mezcla las preguntas
-    showQuestion();
-}
-
-// Llamar a startGame cuando la página cargue
-window.onload = startGame;
+// Llamar a la función para mostrar la primera pregunta
+window.onload = showQuestion;
