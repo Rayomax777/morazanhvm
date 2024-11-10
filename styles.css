@@ -23,22 +23,9 @@ body {
 
 .navbar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 1rem;
-}
-
-#quiz-title {
-    font-size: 1.5rem;
-    color: white;
-    margin-left: 10px;
-}
-
-.navbar-list {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
 }
 
 .navbar-item {
@@ -46,7 +33,6 @@ body {
     font-size: 1.2rem;
     text-decoration: none;
     transition: color 0.3s;
-    padding: 0 15px;
 }
 
 .navbar-item:hover {
@@ -68,72 +54,7 @@ body {
     min-height: 80vh;
 }
 
-/* Divisiones del contenido */
-.left-side, .right-side {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 48%; /* Deja un pequeño espacio entre las dos secciones */
-}
-
-.left-side {
-    justify-content: flex-start;
-}
-
-.right-side {
-    justify-content: flex-start;
-    align-items: center;
-}
-
-/* Estilo para el título */
-.title-box {
-    background-color: #3498db;
-    color: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.title-box h1 {
-    margin: 0;
-    font-size: 1.8rem;
-}
-
-/* Estilo para el subtítulo */
-.subtitle-box {
-    background-color: #f39c12;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.subtitle-box p {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-/* Estilo para la pregunta */
-.question-box {
-    background-color: #2ecc71;
-    color: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.question-box p {
-    margin: 0;
-    font-size: 1.3rem;
-}
-
-/* Botones de las respuestas */
-.answers-box {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
+/* Estilo para las respuestas */
 .option-btn {
     background-color: #4CAF50;
     color: white;
@@ -206,7 +127,6 @@ body {
         font-size: 1.1rem;
     }
 }
-
 @media (min-width: 1025px) {
     #game-container {
         width: 100%;
@@ -237,5 +157,14 @@ body {
     .question-box p {
         margin: 0;
         font-size: 1.3rem;
+        white-space: pre-wrap; /* Para permitir que el texto largo se ajuste en varias líneas */
+    }
+
+    .answers-box {
+        width: 48%;
+    }
+
+    .option-btn {
+        font-size: 1.2rem;
     }
 }
