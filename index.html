@@ -3,55 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morazán Quiz</title>
+    <title>Quiz: La Vida de Francisco Morazán</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav id="navbar">
         <div class="navbar-container">
-            <div id="quiz-title">Morazán Quiz</div>
-            <ul class="navbar-list">
-                <li><a href="#about" class="navbar-item">Acerca de</a></li>
-                <li><a href="#contact" class="navbar-item">Contacto</a></li>
-                <li><a href="#team" class="navbar-item">Team</a></li>
-                <li><a href="https://hnhimno.onrender.com" class="navbar-item">Himno Nacional</a></li>
-            </ul>
+            <a href="https://hnhimno.onrender.com" class="navbar-item">Himno Nacional</a>
+            <a href="#game-container" class="navbar-item">Juego</a>
+            <a href="#about" class="navbar-item">Acerca de</a>
+            <a href="#contact" class="navbar-item">Contacto</a>
         </div>
     </nav>
 
     <!-- Main content -->
     <div id="game-container">
-        <div class="left-side">
-            <!-- Título y subtítulo -->
-            <div class="title-box">
-                <h1>Quiz sobre Francisco Morazán</h1>
-            </div>
-            <div class="subtitle-box">
-                <p>Responde las preguntas sobre la vida de Morazán y gana premios según tu puntaje final.</p>
-            </div>
+        <h1>Quiz sobre Francisco Morazán</h1>
+        <p>Responde las preguntas sobre la vida de Morazán y gana premios según tu puntaje final.</p>
 
-            <!-- Pregunta -->
-            <div class="question-box">
-                <p id="question">¿Dónde nació Francisco Morazán?</p>
+        <div id="quiz-container">
+            <div id="question-container">
+                <p id="question"></p>
+                <button onclick="selectAnswer(0)" id="option0" class="option-btn">Opción 1</button>
+                <button onclick="selectAnswer(1)" id="option1" class="option-btn">Opción 2</button>
+                <button onclick="selectAnswer(2)" id="option2" class="option-btn">Opción 3</button>
+                <button onclick="selectAnswer(3)" id="option3" class="option-btn">Opción 4</button>
             </div>
-        </div>
-
-        <div class="right-side">
-            <!-- Respuestas -->
-            <div class="answers-box">
-                <button onclick="selectAnswer(0)" class="option-btn">Opción 1</button>
-                <button onclick="selectAnswer(1)" class="option-btn">Opción 2</button>
-                <button onclick="selectAnswer(2)" class="option-btn">Opción 3</button>
-                <button onclick="selectAnswer(3)" class="option-btn">Opción 4</button>
-            </div>
-
-            <!-- Puntaje -->
+            
             <p id="score">Puntaje: 0</p>
-
-            <!-- Resultado -->
-            <div id="result-box" class="correct"></div>
+            <div id="result-box"></div>
         </div>
+
+        <p id="result" style="display:none"></p>
     </div>
 
     <script src="quiz.js"></script>
