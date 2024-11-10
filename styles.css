@@ -249,17 +249,9 @@ footer p {
         margin-bottom: 20px;
         box-sizing: border-box; /* Para asegurarnos de que el padding no afecte el ancho */
     }
+
     .question-box p {
         margin: 0;
         font-size: 1.3rem;
-        white-space: pre-wrap; /* Para permitir que el texto largo se ajuste en varias líneas */
-    }
-
-    .answers-box {
-        width: 48%;
-    }
-
-    .option-btn {
-        font-size: 1.2rem;
     }
 }
