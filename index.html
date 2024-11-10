@@ -19,32 +19,31 @@
 
     <!-- Main content -->
     <div id="game-container">
-        <div class="title-box">
-            <h1>Quiz sobre Francisco Morazán</h1>
-        </div>
-        <div class="subtitle-box">
-            <p>Responde las preguntas sobre la vida de Morazán y gana premios según tu puntaje final.</p>
+        <div class="left-side">
+            <div class="title-box">
+                <h1>Quiz sobre Francisco Morazán</h1>
+            </div>
+            <div class="subtitle-box">
+                <p>Responde las preguntas sobre la vida de Morazán y gana premios según tu puntaje final.</p>
+            </div>
+            <div class="question-box">
+                <p id="question">Pregunta aquí...</p>
+            </div>
         </div>
 
-        <div id="quiz-container">
-            <div class="question-box">
-                <p id="question"></p>
-                <p id="score">Puntaje: 0</p>
-            </div>
+        <div class="right-side">
             <div class="answers-box">
                 <button onclick="selectAnswer(0)" id="option0" class="option-btn">Opción 1</button>
                 <button onclick="selectAnswer(1)" id="option1" class="option-btn">Opción 2</button>
                 <button onclick="selectAnswer(2)" id="option2" class="option-btn">Opción 3</button>
                 <button onclick="selectAnswer(3)" id="option3" class="option-btn">Opción 4</button>
             </div>
-            
-            <div id="result-box"></div>
+            <p id="score">Puntaje: 0</p>
         </div>
 
-        <p id="result" style="display:none"></p>
+        <div id="result-box"></div>
     </div>
 
-    <!-- Footer -->
     <footer id="footer">
         <p>&copy; 2024 Juego Educativo. Todos los derechos reservados.</p>
     </footer>
