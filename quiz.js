@@ -64,16 +64,36 @@ const questions = [
         correct: 0
     }
 ];
+
+// Variables globales
+let currentQuestionIndex = 0;
+let score = 0;
+
+// Mostrar una pregunta
+function showQuestion() {
+    const questionElement = document.getElementById("question");
+    const optionButtons = document.querySelectorAll(".option-btn");
+
+    const currentQuestion = questions[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+
+    currentQuestion.options.forEach((option, index) => {
+        optionButtons[index].textContent = option;
+    });
+}
+
+// Manejar la selección de la respuesta
 function selectAnswer(selectedIndex) {
     const currentQuestion = questions[currentQuestionIndex];
     const resultBox = document.getElementById("result-box");
     
     // Verificar si la respuesta es correcta
     if (currentQuestion.options[selectedIndex] === currentQuestion.answer) {
-        score++;
+        score++; // Sumar puntos por respuesta correcta
         resultBox.textContent = "¡Correcto!";
         resultBox.className = "correct";
     } else {
+        score--; // Restar puntos por respuesta incorrecta
         resultBox.textContent = "Incorrecto!";
         resultBox.className = "incorrect";
     }
